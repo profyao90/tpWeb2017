@@ -30,6 +30,18 @@ drawing.paint(ctx, canvas);
 ////
 
 // Code final à utiliser pour manipuler Pencil.
+var pencil = new Pencil(ctx, drawing, canvas);
+drawing.paint(ctx, canvas);
+
+
+function removeForm(index) {
+    // Add shape and action to undoRedo list
+    // drawing.formes.splice(index, 1);
+    drawing.undoRedo.supprimer(index);
+    pencil.updateShapeList();
+    drawing.paint(ctx, canvas);
+    console.log("remove : " + index);
+}
 //var drawing = new Drawing();
 //var pencil = new Pencil(ctx, drawing, canvas);
 //drawing.paint(ctx, canvas);
