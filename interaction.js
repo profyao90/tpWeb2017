@@ -9,7 +9,12 @@ function DnD(canvas, interactor) {
     this.positionFinY =0;
     this.presse =false;
 	// Developper les 3 fonctions gérant les événements
-	
+this.presser = function(evt) {
+        this.presse = true;
+        var moussePosition = getMousePosition(canvas,evt);
+        this.positionDebutX =moussePosition.x;
+        this.positionDebutY = moussePosition.y;
+        interactor.onInteractionStart(this);	
 
 	// Associer les fonctions précédentes aux évènements du canvas.
 };
