@@ -46,3 +46,36 @@ function Rectangle(coordRECX, coordRECY, largeur, hauteur,epaisseur,color){
         return (this.coordRECY + this.hauteur);
     }
 } Rectangle.prototype = new Forme();
+
+function  Line(coordSX, coordSY, coordEX, coordEY,epaisseur,color){ 
+    Forme.call(this, epaisseur,color);
+    this.coordSX = coordSX;
+    this.coordSY = coordSY;
+    this.coordEX = coordEX;
+    this.coordEY = coordEY;
+    this.epaisseur=epaisseur;
+    this.color=color;
+
+    this.getEpaisseur = function(){
+        return this.epaisseur;
+    }
+     this.getColor = function(){
+        return this.color;
+    }
+     //Fonction qui retourne la coordonnée de X
+   this.getCoordSX = function(){
+        return this.coordSX;
+    }
+    //Fonction qui retourne la coordonnée de Y
+    this.getCoordSY = function(){
+        return this.coordSY;
+    }
+    //Fonction qui retourne la coordonnée de X final
+    this.getCoordEX = function(){
+        return this.coordEX;
+    }
+    //Fonction qui retourne la coordonnée de Y final
+    this.getCoordEY = function(){
+        return this.coordEY;
+}
+}Line.prototype = new Forme();
