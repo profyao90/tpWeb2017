@@ -12,6 +12,17 @@ function Pencil(ctx, drawing, canvas) {
 	new DnD(canvas, this);
 
 	// Implémentez ici les 3 fonctions onInteractionStart, onInteractionUpdate et onInteractionEnd
+	this.onInteractionStart = function(dnd){
+        this.currLineWidth = document.getElementById("spinnerWidth").value;
+        this.currColour = document.getElementById("colour").value;
+        var line  = document.getElementById("butLine");
+        var rect  = document.getElementById("butRect");
+
+        this.currEditingMode = editingMode.line;
+        if (rect.checked){
+        	this.currEditingMode = editingMode.rect;
+		}
+	};
 };
 
 
