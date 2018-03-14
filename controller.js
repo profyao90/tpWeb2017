@@ -23,6 +23,22 @@ function Pencil(ctx, drawing, canvas) {
         	this.currEditingMode = editingMode.rect;
 		}
 	};
+	this.onInteractionUpdate = function(dnd) {
+			switch (this.currEditingMode) {
+      case editingMode.rect: {
+			this.currentShape= new Rectangle(dnd.positionDebutX, dnd.positionDebutY,  dnd.positionFinX-dnd.positionDebutX, dnd.positionFinY-dnd.positionDebutY, this.currLineWidth, this.currColour);
+			drawing.paint(ctx, canvas);
+			this.currentShape.paint(ctx, canvas);
+			break;
+		}
+		case editingMode.line:{
+			this.currentShape= new Line(dnd.positionDebutX, dnd.positionDebutY,  dnd.positionFinX, dnd.positionFinY, this.currLineWidth, this.currColour);
+			drawing.paint(ctx, canvas);
+			this.currentShape.paint(ctx, canvas);
+			break;
+		}}
+	
+}; 
 };
 
 
