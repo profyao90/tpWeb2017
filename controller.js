@@ -38,7 +38,14 @@ function Pencil(ctx, drawing, canvas) {
 			break;
 		}}
 	
+
 }; 
-};
+this.onInteractionEnd = function(dnd) {
+		drawing.monTableau.push(this.currentShape);
+		drawing.paint(ctx, canvas);
+		this.updateShapeList();
+
+	};
+}
 
 
