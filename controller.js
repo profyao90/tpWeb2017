@@ -10,6 +10,23 @@ function Pencil(ctx, drawing, canvas) {
 	// Liez ici les widgets à la classe pour modifier les attributs présents ci-dessus.
 
 	new DnD(canvas, this);
+	 this.updateShapeList = function () {
+        var list = document.getElementById("shapeList");
+        list.innerHTML = "";
+        drawing.monTableau.forEach(function (element) {
+            var id = drawing.monTableau.indexOf(element);
+            if (element.coordRECY) {
+                list.innerHTML += "<li style='color:" + element.couleur + ";'> "
+                    + "<button type='button' class='btn btn-default' onclick='supprimer("+id+")'><span class='glyphicon glyphicon-remove-sign'></span></button>" +
+                    "rect : (" + element.coordRECX + "," + element.coordRECY + "), largeur:" + element.largeur + ", longeur:" + element.hauteur + ", epai:" + element.epaisseur + "</li>";
+            } else {
+                list.innerHTML += "<li style='color:" + element.couleur + ";'>"
+                    + "<button type='button' class='btn btn-default' onclick='supprimer("+id+")'><span class='glyphicon glyphicon-remove-sign'></span></button>" +
+                    " ligne : (" + element.coordEX + "," + element.coordEY + "), (" + element.coordSX + "," + element.coordSX + "), epai:" + element.epaisseur + "</li>";
+            }
+            console.log(element)
+        });
+	};
 
 	// Implémentez ici les 3 fonctions onInteractionStart, onInteractionUpdate et onInteractionEnd
 	this.onInteractionStart = function(dnd){
