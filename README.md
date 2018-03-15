@@ -6,3 +6,7 @@ les deux figures demandés sont le rectange et un trait.
 On poura changer la taille et la couleur de selection et choisir le type de figure en cliquant sur l'onglet.
 On peut aussi supprimer les element dessinés.
 cette partie est en cour de finissions.
+## Auteur
+* Yao Aubin 
+* Koffi Williams
+* Bah Amadou
