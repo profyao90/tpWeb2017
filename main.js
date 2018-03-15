@@ -10,22 +10,14 @@ new DnD(canvas);
 ctx.fillStyle = '#F0F0F0'; // set canvas' background color
 ctx.fillRect(0, 0, canvas.width, canvas.height);  // now fill the canvas
 /////
-var rectangle1 = new Rectangle(100, 200, 50, 100, 5, '#cc934a');
-var rectangle2 = new Rectangle(90, 250, 10, 100, 5, '#3d59cc');
-var line1 = new Line(100, 230, 60, 100, 5, '#f0ef10');
-var line2 = new Line(150, 220, 50, 150, 4, '#09CC10');
+var rectangle1 = new Rectangle(223, 137, 387, 141, 5, '#d00604');
+var line1 = new Line(580, 458, 114, 111, 5, '#080dfa');
 var drawing = new Drawing();
 drawing.monTableau.push(rectangle1);
-drawing.monTableau.push(rectangle2);
 drawing.monTableau.push(line1);
-drawing.monTableau.push(line2);
 drawing.paint(ctx, canvas);
 
 // Code temporaire pour tester l'affiche de la vue
-//var rec = new Rectangle(10, 20, 50, 100, 5, '#00CCC0');
-//rec.paint(ctx);
-//var ligne = new Rectangle(10, 20, 50, 100, 5, '#00CCC0');
-//ligne.paint(ctx);
 // tester également Dessin.
 ////
 
@@ -42,7 +34,11 @@ function removeForm(index) {
     drawing.paint(ctx, canvas);
     console.log("remove : " + index);
 }
-//var drawing = new Drawing();
-//var pencil = new Pencil(ctx, drawing, canvas);
-//drawing.paint(ctx, canvas);
+function supprimer(index) {
+    drawing.monTableau.splice(index, 1);
+    pencil.updateShapeList();
+    drawing.paint(ctx, canvas);
+    console.log("remove : " + index);
+}
+
 
